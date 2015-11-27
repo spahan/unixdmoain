@@ -6,5 +6,5 @@ kinitpath:%(krbprefix)s/bin/kinit
 kdestroypath:%(krbprefix)s/bin/kdestroy
 kadminPath:%(krbprefix)s/sbin/kadmin
 plugin_authen:krb5_apache
-ldapservers:titan.ud.unibas.ch
+ldapservers:ldap.example.com
 cachedir=/tmp/
