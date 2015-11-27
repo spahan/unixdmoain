@@ -1,0 +1,10 @@
+Makefile.in
+configure
+install-sh
+missing
+py-compile
+aclocal.m4
+autom4te.cache/
+Makefile
+config.log
+config.status
