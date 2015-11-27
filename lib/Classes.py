@@ -29,16 +29,16 @@ class Config(object):
             #krb5 authen plugin config
             "plugin_authen":"krb5_keytab",
             "krb5keytab":"/etc/krb5.keytab",
-            "krb5realm":"UD.UNIBAS.CH",
+            "krb5realm":"EXAMPLE.COM",
             "kinitpath":"/usr/bin/kinit",
             "klistpath":"/usr/bin/klist",
             "kdestroypath":"/usr/bin/kdestroy",
             "kadminpath":"/usr/sbin/kadmin",
             #ldap author plugin config
             "plugin_author":"ldapdb",
-            "ldapbase":"dc=ud,dc=unibas,dc=ch",
-            "ldapauthen":"ou=authen,dc=ud,dc=unibas,dc=ch",
-            "ldapservers": "titan.ud.unibas.ch,atlas.ud.unibas.ch",
+            "ldapbase":"dc=ud,dc=example,dc=com",
+            "ldapauthen":"ou=authen,dc=ud,dc=example,dc=com",
+            "ldapservers": "ldap1.example.com,ldap2.example.com",
             "ldapproto":"ldap",
             "ldaptimeout":"30",
             #db plugin config
