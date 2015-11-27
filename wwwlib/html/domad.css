@@ -1,0 +1,64 @@
+/* Base Settings */
+body {font-family: "Verdana","Tahoma","Arial","MS Sans Serif";margin:0px;padding:0px;}
+p { margin:0; }
+
+/* Base Layout */
+.content { width:1200px; margin: 0px auto;}
+#header { 
+    height:100px; 
+    margin:10px 0; 
+    position:relative; 
+}
+#tree { 
+    width:300px; height: 600px; 
+    margin:0 10px 10px 0; 
+    padding: 10px 0px 10px 10px;
+    overflow:auto; 
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+#details { 
+    height: 600px; 
+    margin: 0px 0px 10px 0px; 
+    padding: 10px; 
+    overflow:auto;
+}
+
+.hidden { display:none }
+
+
+/* Header */
+#header { background-image:url(images/logo.png); position: relative; }
+#header > .title {position:absolute; left:60%; top:0px; line-height:1.3em; text-indent:-2em; font-size:x-large;}
+#header > .title:first-line {font-size:xx-large;text-indent:0;}
+#header > .helpButton {position:absolute; bottom:10px; right:10px; width:24px;}
+
+/* Display Domain Tree on the left side */
+/*#tree {-moz-user-select: none; -khtml-user-select: none; }
+#tree span {cursor:move;} */
+ul { text-decoration:none; list-style: none;}
+/* some hacky things */
+#tree { line-height: 1.5em; }
+#tree ul { padding-left:20px;}
+#tree > ul { margin-top: 0; }
+#tree li > div { white-space: nowrap; }
+#tree div > span { margin: 0 5px; }
+
+/* tabs style */
+.node_tab { min-height:530px; font-size:0.8em; padding:10px;}
+.ui-tabs-nav a img { position:relative; top:2px; left:5px; }
+.node_tab form { display: inline; }
+.date span { padding-right: 5px; }
+
+/* policy details */
+.policy_tab > form { 
+    margin-bottom:5px; 
+    border-bottom: 1px solid; 
+}
+.policy_tab table { width:100%;}
+.node_tab tr:nth-child(2n) {background-color:#E0E0E0;}
+ul.ui-autocomplete { background: #F5F5F5; font-size:0.8em; max-height:20em; overflow-x: hidden; overflow-y:auto; }
+
+.policy_tab .sourceLink { padding: 0 5px; }
+.drag_targeted { background-color:#CCC; }

@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "leaving backup in /var/cache/ud2"

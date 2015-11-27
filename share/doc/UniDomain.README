@@ -1,0 +1,310 @@
+Help on module UniDomain.UniDomain in UniDomain:
+
+NAME
+    UniDomain.UniDomain
+
+FILE
+    /usr/lib64/python2.4/site-packages/UniDomain/UniDomain.py
+
+DESCRIPTION
+    THIS SOFTWARE IS LICENSED UNDER THE BSD LICENSE CONDITIONS.
+    FOR LICENCE DETAILS SEE share/LICENSE.TXT
+    
+    (c) 2005-2009, Marco Hoehle <marco.hoehle@unibas.ch>
+
+CLASSES
+    _host(UniDomain.plugins.AUTHEN_krb5.AUTHEN, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+        host
+    UniDomain.plugins.AUTHEN_krb5.AUTHEN(UniDomain.Classes._princ)
+        janitor(UniDomain.plugins.AUTHEN_krb5.AUTHEN, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+    UniDomain.plugins.AUTHEN_krb5.AUTHEN_user(UniDomain.plugins.AUTHEN_krb5.AUTHEN)
+        admin(UniDomain.plugins.AUTHEN_krb5.AUTHEN_user, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+        domad(UniDomain.plugins.AUTHEN_krb5.AUTHEN_user, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+    UniDomain.plugins.AUTHOR_ldap.AUTHOR(UniDomain.Classes._princ)
+        admin(UniDomain.plugins.AUTHEN_krb5.AUTHEN_user, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+        domad(UniDomain.plugins.AUTHEN_krb5.AUTHEN_user, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+        janitor(UniDomain.plugins.AUTHEN_krb5.AUTHEN, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+    
+    class admin(UniDomain.plugins.AUTHEN_krb5.AUTHEN_user, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+     |  Enterprise Admin Account
+     |  
+     |  human administrators for host registration tool and request process
+     |  
+     |  Method resolution order:
+     |      admin
+     |      UniDomain.plugins.AUTHEN_krb5.AUTHEN_user
+     |      UniDomain.plugins.AUTHEN_krb5.AUTHEN
+     |      UniDomain.plugins.AUTHOR_ldap.AUTHOR
+     |      UniDomain.Classes._princ
+     |      __builtin__.object
+     |  
+     |  Methods defined here:
+     |  
+     |  intro(self)
+     |  
+     |  login(self, username)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHEN_krb5.AUTHEN_user:
+     |  
+     |  AUTHEN_init(self)
+     |  
+     |  __init__(self, principal='root')
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHEN_krb5.AUTHEN:
+     |  
+     |  AUTHEN_close(self)
+     |  
+     |  klist(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHOR_ldap.AUTHOR:
+     |  
+     |  AUTHOR_close(self)
+     |      #--- close ldap conn
+     |  
+     |  AUTHOR_init(self)
+     |  
+     |  get_ldapconn(self)
+     |  
+     |  lsearch(self, base=None, scope=2, filter='objectclass=*', attr=[])
+     |      wrapper for a.conn.search_s (synchronous) queries
+     |  
+     |  open(self)
+     |      wrapper for AUTHOR_init
+     |  
+     |  set_base(self)
+     |      method to find the base UD2container the object lives in
+     |  
+     |  set_domain(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.Classes._princ:
+     |  
+     |  __del__(self)
+     |  
+     |  __repr__(self)
+     |  
+     |  close(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from UniDomain.Classes._princ:
+     |  
+     |  __dict__ = <dictproxy object>
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__ = <attribute '__weakref__' of '_princ' objects>
+     |      list of weak references to the object (if defined)
+    
+    class domad(UniDomain.plugins.AUTHEN_krb5.AUTHEN_user, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+     |  Domain Admin Account
+     |  
+     |  human domain admin for host registration tool and some query / mod stuff
+     |  
+     |  Method resolution order:
+     |      domad
+     |      UniDomain.plugins.AUTHEN_krb5.AUTHEN_user
+     |      UniDomain.plugins.AUTHEN_krb5.AUTHEN
+     |      UniDomain.plugins.AUTHOR_ldap.AUTHOR
+     |      UniDomain.Classes._princ
+     |      __builtin__.object
+     |  
+     |  Methods defined here:
+     |  
+     |  intro(self)
+     |  
+     |  open(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHEN_krb5.AUTHEN_user:
+     |  
+     |  AUTHEN_init(self)
+     |  
+     |  __init__(self, principal='root')
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHEN_krb5.AUTHEN:
+     |  
+     |  AUTHEN_close(self)
+     |  
+     |  klist(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHOR_ldap.AUTHOR:
+     |  
+     |  AUTHOR_close(self)
+     |      #--- close ldap conn
+     |  
+     |  AUTHOR_init(self)
+     |  
+     |  get_ldapconn(self)
+     |  
+     |  lsearch(self, base=None, scope=2, filter='objectclass=*', attr=[])
+     |      wrapper for a.conn.search_s (synchronous) queries
+     |  
+     |  set_base(self)
+     |      method to find the base UD2container the object lives in
+     |  
+     |  set_domain(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.Classes._princ:
+     |  
+     |  __del__(self)
+     |  
+     |  __repr__(self)
+     |  
+     |  close(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from UniDomain.Classes._princ:
+     |  
+     |  __dict__ = <dictproxy object>
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__ = <attribute '__weakref__' of '_princ' objects>
+     |      list of weak references to the object (if defined)
+    
+    class host(_host)
+     |  class host_s is for having an already opened and filled hostobject 
+     |  when __init__ we put a copy of our own (master,not princ !) ldap record into memory (.data) which can be queried by self.data[key]
+     |  __init__ is doing the master initialization part of an host object,
+     |  - bind the host to the ldap server
+     |  - get a copy of the host's record into memory (self.data)
+     |  - get user/group ID's for this host and cfengine flags into .users, .groups, .cfClass
+     |  
+     |  Method resolution order:
+     |      host
+     |      _host
+     |      UniDomain.plugins.AUTHEN_krb5.AUTHEN
+     |      UniDomain.plugins.AUTHOR_ldap.AUTHOR
+     |      UniDomain.Classes._princ
+     |      __builtin__.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHEN_krb5.AUTHEN:
+     |  
+     |  AUTHEN_close(self)
+     |  
+     |  AUTHEN_init(self)
+     |  
+     |  klist(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHOR_ldap.AUTHOR:
+     |  
+     |  AUTHOR_close(self)
+     |      #--- close ldap conn
+     |  
+     |  AUTHOR_init(self)
+     |  
+     |  get_ldapconn(self)
+     |  
+     |  lsearch(self, base=None, scope=2, filter='objectclass=*', attr=[])
+     |      wrapper for a.conn.search_s (synchronous) queries
+     |  
+     |  open(self)
+     |      wrapper for AUTHOR_init
+     |  
+     |  set_base(self)
+     |      method to find the base UD2container the object lives in
+     |  
+     |  set_domain(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.Classes._princ:
+     |  
+     |  __del__(self)
+     |  
+     |  __repr__(self)
+     |  
+     |  close(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from UniDomain.Classes._princ:
+     |  
+     |  __dict__ = <dictproxy object>
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__ = <attribute '__weakref__' of '_princ' objects>
+     |      list of weak references to the object (if defined)
+    
+    class janitor(UniDomain.plugins.AUTHEN_krb5.AUTHEN, UniDomain.plugins.AUTHOR_ldap.AUTHOR)
+     |  Enterprise Admin Account
+     |  
+     |  database housekeeping jobs
+     |  
+     |  Method resolution order:
+     |      janitor
+     |      UniDomain.plugins.AUTHEN_krb5.AUTHEN
+     |      UniDomain.plugins.AUTHOR_ldap.AUTHOR
+     |      UniDomain.Classes._princ
+     |      __builtin__.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, *args, **kword)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHEN_krb5.AUTHEN:
+     |  
+     |  AUTHEN_close(self)
+     |  
+     |  AUTHEN_init(self)
+     |  
+     |  klist(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.plugins.AUTHOR_ldap.AUTHOR:
+     |  
+     |  AUTHOR_close(self)
+     |      #--- close ldap conn
+     |  
+     |  AUTHOR_init(self)
+     |  
+     |  get_ldapconn(self)
+     |  
+     |  lsearch(self, base=None, scope=2, filter='objectclass=*', attr=[])
+     |      wrapper for a.conn.search_s (synchronous) queries
+     |  
+     |  open(self)
+     |      wrapper for AUTHOR_init
+     |  
+     |  set_base(self)
+     |      method to find the base UD2container the object lives in
+     |  
+     |  set_domain(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from UniDomain.Classes._princ:
+     |  
+     |  __del__(self)
+     |  
+     |  __repr__(self)
+     |  
+     |  close(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from UniDomain.Classes._princ:
+     |  
+     |  __dict__ = <dictproxy object>
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__ = <attribute '__weakref__' of '_princ' objects>
+     |      list of weak references to the object (if defined)
+
+FUNCTIONS
+    client_run()
+        procedure for a standard client to follow, that's the main path for clients (hosts)
+        NOT YET IMPLEMENTED
+
+DATA
+    DEBUG = False
+    xmlCONF = {'AUTHEN_plugin': 'AUTHEN_krb5', 'AUTHOR_plugin': 'AUTHOR_ld...
+
+

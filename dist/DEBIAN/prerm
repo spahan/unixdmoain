@@ -1,0 +1,10 @@
+#!/bin/bash
+# remove link to library from all python dists
+for python_lib_dir in `ls -dr /usr/lib/python2.?`; do
+    if [ -h ${python_lib_dir}/UniDomain ]; then
+        rm ${python_lib_dir}/UniDomain
+    fi
+done
+for ud_lib in `ls -dr1 /usr/lib/python2.?/*-packages/UniDomain`; do
+    rm ${ud_lib}
+done

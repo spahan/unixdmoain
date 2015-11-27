@@ -1,0 +1,113 @@
+#objectclasses: ( 1.3.6.1.4.1.22865.10.4.2.3
+#                     NAME 'udContainer'
+#                     DESC 'group container for multiple purpose (users, group of group etc)'
+#                     SUP top AUXILIARY
+#                     MUST ( cn $ udSerial )
+#                     MAY ( description $ ou $ policyClass $ uid $ uidNumber $ gid $ gidNumber $ udMemberOfGroup $ udMemberSerial $ udMemberContainer ) )
+#
+#----------------------
+#
+#
+dn: ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udDomain
+description: this is your base domain container
+ou: example.org
+uid: example.org_user1
+uid: example.org_user2
+uid: example.org_user3
+uid: example.org_user4
+unixGroup: example.org_wheel1
+unixGroup: example.org_wheel2
+policyClass: example.org_policy1
+policyClass: example.org_policy2
+policyClass: example.org_policy3
+udGroup: DomainAdmin
+
+# secure hosts are an example for putting hosts with limited user and grouprights
+dn: ou=secureHosts,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udHostContainer
+description: secure hosts are an example for putting hosts with limited user and grouprights
+ou: secureHosts
+uid: secureHosts_user1
+uid: secureHosts_user2
+unixGroup: secureHosts_wheel
+policyClass: secureHosts_policy1 
+policyClass: secureHosts_policy2
+policyClass: secureHosts_policy3
+policyClass: secureHosts_policy4
+
+dn: ou=server,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udHostContainer
+description: server OU is the standard for server hosts with default domain settings
+ou: server
+policyClass: secureHosts_policy1
+policyClass: secureHosts_policy2
+udGroup: DomainDefault
+
+dn: ou=workstation,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udHostContainer
+description: workstation OU is the standard for client laptops and workstations with default domain settings
+ou: workstation
+policyClass: secureHosts_policy1
+policyClass: secureHosts_policy2
+udGroup: DomainDefault
+
+# example for hostgroups identified by the FQDN, this not used in the client but may be useful in the presentation layer
+dn: cn=newHostGroup,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udGroup
+cn: newHostGroup
+FQDN: newHost1.ud.unibas.ch
+FQDN: newHost2.ud.unibas.ch
+udSerial: 200011
+
+# here are the initial groups, there are the standards
+dn: cn=DomainAdmin,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udGroup
+description: DomainAdministrators shall be accepted on all subcontainers
+cn: DomainAdmin
+uid: hoehle
+uid: gschwina
+uid: sindling
+
+dn: cn=UID,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udGroup
+cn: UID
+description: default posixAccount uid container, keeping all domain users for grouping
+uid: hoehle
+uid: gschwina
+uid: sindling
+uid: userx
+uid: usery
+uid: allusers
+
+dn: cn=unixGroup,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udGroup
+description: default posixGroup container, keeping all domain users for grouping
+cn: unixGroup
+unixGroup: urzwheel
+unixGroup: domainadmin
+unixGroup: allgroup
+unixGroup: testuser
+unixGroup: poweruser  
+unixGroup: defaultuser  
+unixGroup: dummy  
+
+dn: cn=DomainDefault,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udGroup
+description: meta-group to tight DomainAdmin, UID and unixGroup together for use as default 
+cn: DomainDefault
+udGroup: DomainAdmin
+udGroup: UID
+udGroup: unixGroup
+udGroup: server
+
+

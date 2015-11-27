@@ -1,0 +1,284 @@
+
+
+
+# gschwina, people, cus, urz, unibas.ch
+dn: uid=gschwina,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Gschwind
+loginShell: /bin/bash
+uidNumber: 2184
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: gschwina
+gecos: Arsene Gschwind
+cn: Arsene Gschwind
+homeDirectory: /u/gschwina
+
+# jacquot, people, cus, urz, unibas.ch
+dn: uid=jacquot,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Jacquot
+loginShell: /bin/bash
+uidNumber: 1016
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: jacquot
+gecos: Martin Jacquot
+cn: Martin Jacquot
+homeDirectory: /u/jacquot
+
+# volzh, people, network, urz, unibas.ch
+dn: uid=volzh,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Volz
+loginShell: /bin/bash
+uidNumber: 7853
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: volzh
+gecos: Harald Volz
+cn: Harald Volz
+homeDirectory: /u/volzh
+
+# schrudi, people, network, urz, unibas.ch
+dn: uid=schrudi,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Schreiner
+loginShell: /bin/bash
+uidNumber: 2810
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: schrudi
+gecos: Ruediger Schreiner
+cn:: UsO8ZGlnZXIgU2NocmVpbmVy
+cn: Ruediger Schreiner
+homeDirectory: /u/schrudi
+
+# hoehle, people, cus, urz, unibas.ch
+dn: uid=hoehle,ou=authen,dc=ud,dc=unibas,dc=ch
+sn:: SMO2aGxl
+sn: Hoehle
+loginShell: /bin/bash
+uidNumber: 26578
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: hoehle
+gecos: Marco Hoehle
+cn:: TWFyY28gSMO2aGxl
+cn: Marco Hoehle
+homeDirectory: /u/hoehle
+
+# rauan, people, network, urz, unibas.ch
+dn: uid=rauan,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Rau
+loginShell: /bin/bash
+uidNumber: 22484
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: rauan
+gecos: Andreas Rau
+cn: Andreas Rau
+homeDirectory: /u/rauan
+
+# glatz, people, default, urz, unibas.ch
+dn: uid=glatz,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Glatz
+loginShell: /bin/bash
+uidNumber: 1013
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: glatz
+gecos: Dieter Glatz
+cn: Dieter Glatz
+homeDirectory: /u/glatz
+
+# frarob00, people, informatik_cs, urz, unibas.ch
+dn: uid=frarob00,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Frank
+loginShell: /bin/bash
+uidNumber: 18388
+gidNumber: 1178
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: frarob00
+gecos: Robert Frank
+cn: Robert Frank
+homeDirectory: /u/frarob00
+
+# francz, people, default, urz, unibas.ch
+dn: uid=francz,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Francz
+loginShell: /bin/bash
+uidNumber: 1780
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: francz
+gecos: Gilbert Francz
+cn: Gilbert Francz
+homeDirectory: /u/francz
+
+# merz, people, default, urz, unibas.ch
+dn: uid=merz,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Merz
+loginShell: /bin/bash
+uidNumber: 4606
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: merz
+gecos: Ulla Merz
+cn: Ulla Merz
+homeDirectory: /u/merz
+
+# sindling, people, cus, urz, unibas.ch
+dn: uid=sindling,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Sindlinger
+loginShell: /bin/bash
+uidNumber: 10086
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: sindling
+gecos: Bernd Sindlinger
+cn: Bernd Sindlinger
+homeDirectory: /u/sindling
+
+# marquart, people, default, urz, unibas.ch
+dn: uid=marquart,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Marquart
+loginShell: /bin/bash
+uidNumber: 7282
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: marquart
+gecos: Tobias Marquart
+cn: Tobias Marquart
+homeDirectory: /u/marquart
+
+# guggisbe, people, informatik_cs, urz, unibas.ch
+dn: uid=guggisbe,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Guggisberg
+loginShell: /bin/bash
+uidNumber: 1798
+gidNumber: 1178
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: guggisbe
+gecos: Martin Guggisberg
+cn: Martin Guggisberg
+homeDirectory: /u/guggisbe
+
+# michelb, people, default, urz, unibas.ch
+dn: uid=michelb,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Michel
+loginShell: /bin/bash
+uidNumber: 6489
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: michelb
+gecos: Bernard Michel
+cn: Bernard Michel
+homeDirectory: /u/michelb
+
+# cusadmin, groups, secure, server, cus, urz, unibas.ch
+dn: cn=cusadmin,ou=authen,dc=ud,dc=unibas,dc=ch
+gidNumber: 1000
+memberUid: hoehle
+memberUid: sindling
+memberUid: gschwinda
+memberUid: jacquotm
+memberUid: vogtp
+objectClass: top
+objectClass: posixGroup
+cn: cusadmin
+
+# chemie, groups, secure, server, cus, urz, unibas.ch
+dn: cn=chemie,ou=authen,dc=ud,dc=unibas,dc=ch
+gidNumber: 1169
+objectClass: top
+objectClass: posixGroup
+cn: chemie
+
+# urz, groups, secure, server, cus, urz, unibas.ch
+dn: cn=urz,ou=authen,dc=ud,dc=unibas,dc=ch
+gidNumber: 1170
+objectClass: top
+objectClass: posixGroup
+cn: urz
+
+# urzwheel, groups, secure, server, cus, urz, unibas.ch
+dn: cn=urzwheel,ou=authen,dc=ud,dc=unibas,dc=ch
+gidNumber: 666
+memberUid: hoehle
+memberUid: gschwina
+memberUid: sindling
+objectClass: top
+objectClass: posixGroup
+cn: urzwheel
+description: sudoers URZ / CUS - sensible systems
+
+# suterro, people, default, urz, unibas.ch
+dn: uid=suterro,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Suter
+loginShell: /bin/bash
+uidNumber: 5454
+gidNumber: 1165
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: suterro
+gecos: Robert Suter
+cn: Robert Suter
+homeDirectory: /u/suterro
+
+# wackerna, people, network, urz, unibas.ch
+dn: uid=wackerna,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: Wackernagel
+loginShell: /bin/bash
+uidNumber: 30696
+gidNumber: 1170
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: wackerna
+gecos: Henning Wackernagel
+cn: Henning Wackernagel
+homeDirectory: /u/wackerna
+
+# vonrotzc, people, hosting, urz, unibas.ch
+dn: uid=vonrotzc,ou=authen,dc=ud,dc=unibas,dc=ch
+sn: von Rotz
+sn: Rotz
+loginShell: /bin/bash
+uidNumber: 26562
+gidNumber: 1157
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+uid: vonrotzc
+gecos: Christina von Rotz
+cn: Christina von Rotz
+homeDirectory: /u/vonrotzc
+
+
+

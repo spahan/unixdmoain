@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<marshal>
+    <dictionary id="i2">
+        <string>debug</string> <string>False</string>
+        <string>ldapservers</string>
+            <list id="i3">
+                <string>titan.ud.unibas.ch</string>
+            </list>
+    </dictionary>
+</marshal>

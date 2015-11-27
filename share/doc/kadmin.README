@@ -1,0 +1,33 @@
+Help on module UniDomain.kadmin in UniDomain:
+
+NAME
+    UniDomain.kadmin
+
+FILE
+    /usr/lib64/python2.4/site-packages/UniDomain/kadmin.py
+
+DESCRIPTION
+    THIS SOFTWARE IS LICENSED UNDER THE BSD LICENSE CONDITIONS.
+    FOR LICENCE DETAILS SEE share/LICENSE.TXT
+    
+    (c) 2005-2009, Marco Hoehle <marco.hoehle@unibas.ch>
+
+FUNCTIONS
+    ank(princ, userid, password=None)
+    
+    delprinc(princ, userid)
+    
+    hostquery(princ, pattern='')
+    
+    listprinc(princ, pattern=None)
+    
+    userexists(princ, userid)
+        test for the user, but request only a part of the user as search pattern.
+        avoids to read in the whole kerberos DB for the most cases
+    
+    xst(princ, userid, KEYTAB='/etc/krb5.keytab')
+
+DATA
+    DEBUG = False
+
+

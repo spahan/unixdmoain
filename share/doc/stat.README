@@ -1,0 +1,33 @@
+Help on module UniDomain.stat in UniDomain:
+
+NAME
+    UniDomain.stat
+
+FILE
+    /usr/lib64/python2.4/site-packages/UniDomain/stat.py
+
+DESCRIPTION
+    THIS SOFTWARE IS LICENSED UNDER THE BSD LICENSE CONDITIONS.
+    FOR LICENCE DETAILS SEE share/LICENSE.TXT
+    
+    (c) 2005-2009, Marco Hoehle <marco.hoehle@unibas.ch>
+    
+    
+    
+    
+    stats lib is a collection of scripts to get states of ud Objects
+    this lib is NOT useful for internal coding but for the userspace
+    like bin, sbin, admin and test.
+    
+    Well and for now it's not a big collection as I just need one special function ;)
+
+FUNCTIONS
+    get_udSerial(princ)
+    
+    hostquery(princ, FQDN)
+        returns 2 booleans in a tuple (ldap_ok, kdc_ok)
+
+DATA
+    DEBUG = False
+
+

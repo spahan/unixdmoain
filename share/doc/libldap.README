@@ -1,0 +1,65 @@
+Help on module UniDomain.libldap in UniDomain:
+
+NAME
+    UniDomain.libldap
+
+FILE
+    /usr/lib64/python2.4/site-packages/UniDomain/libldap.py
+
+DESCRIPTION
+    THIS SOFTWARE IS LICENSED UNDER THE BSD LICENSE CONDITIONS.
+    FOR LICENCE DETAILS SEE share/LICENSE.TXT
+    
+    (c) 2005-2009, Marco Hoehle <marco.hoehle@unibas.ch>
+
+FUNCTIONS
+    get_posixAccount(princ, resnode)
+        query princ.authen for posixAccounts in ResNode.uid
+        append matching objects to ResNode.passwd
+    
+    get_posixGroup(princ, resnode)
+    
+    hostquery(princ, FQDN)
+    
+    hostresult(princ)
+        interrogate directory server about ourself and give back an ResultNode instance 
+        with all cruicial information
+    
+    next_udSerial(princ)
+    
+    query_base(princ)
+        get settings from base udHostContainer and udHost objects 
+        This function returns an ResNode.data dictionary instance that can be used via the ResNode.set_attrlists() method
+    
+    query_udGroup(princ, udGroup)
+        takes a udGroup name and queries directory for the record, if there are other udGroup records in this one they're also fetched.
+        The search is only one level, so udGroup -> udGroup is regular, udGroup -> udGroup -> udGroup will ignore the last udGroup a.s.o
+        This function returns an ResNode.data dictionary instance that can be used via the ResNode.set_attrlists() method
+    
+    result(princ, reslist)
+        reslist contain's list of ldap.search result ID's.
+    
+    search(princ, base=False, scope=0, filter='(objectClass=*)', attrib=False)
+        query the base ldapobject in and get self.supported_ldapattrib (see Classes.py)
+        return queryID (resultID)
+    
+    search_expiredHosts(janitor)
+        housekeeping job shall search for expired Hosts via lastSeen
+    
+    show_debug(res)
+    
+    update_dnsRecord(princ)
+        update the clienthost's IPv6 and IPv4 records in the DNS-ldap-backend ;)
+        
+        got modify example from:
+        http://www.packtpub.com/article/python-ldap-applications-more-ldap-operations-and-the-ldap-url-library
+        thanks.
+        a6Record naming style is not supported anymore use AAAA instead
+    
+    update_dnsSOA(janitor)
+        housekeeping job shall update DNS SOA (time) record regulary
+
+DATA
+    DEBUG = False
+
+

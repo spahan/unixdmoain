@@ -1,0 +1,14 @@
+Package: unidomain-client
+Priority: optional
+Section: admin
+Maintainer: Hanspeter Spalinger <h.spalinger@stud.unibas.ch>
+Architecture: all
+Version: 2.7-2
+Depends: python, krb5-user, libpam-krb5, python-ldap, libsasl2-modules-gssapi-mit
+Replaces: libldap
+Description: University managed domain client side utilities
+ the UniDomain System manages Hosts/Users and Settings
+ in a heterogenous System of uncoupled departments
+ while still providing easy config and SSO-styled login etc.
+ .
+ This package contains the client side Tools to manage a host.

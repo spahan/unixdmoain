@@ -1,0 +1,16 @@
+# testhost, hostGroup, new, SYS, ud.unibas.ch
+dn: cn=testhost,ou=hostGroup,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: dNSZone
+objectClass: udHost
+relativeDomainName: testhost
+zoneName: ud.unibas.ch
+dNSTTL: 3600
+dNSClass: IN
+ARecord: 192.168.0.42
+cn: testhost
+FQDN: testhost.ud.unibas.ch
+udSerial: 1000000
+uid: hoehle
+USID: host/testhost.ud.unibas.ch@UD.UNIBAS.CH
+

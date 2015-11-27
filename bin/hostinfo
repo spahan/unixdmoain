@@ -1,0 +1,3 @@
+#!/bin/sh
+python /opt/UD2/bin/udsearch.py `hostname -f`
+python /opt/UD2/sbin/hostrun.py $@

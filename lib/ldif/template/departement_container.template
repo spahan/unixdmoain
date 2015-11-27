@@ -1,0 +1,25 @@
+#--- --DEPARTEMENT--
+
+dn: ou=--DEPARTEMENT--,ou=urz,dc=unibas,dc=ch
+objectClass: organizationalUnit
+objectClass: UD2container
+ou: --DEPARTEMENT--
+cn: --DEPARTEMENT--
+description: hosting service for --DEPARTEMENT-- group
+
+dn: cn=people,ou=--DEPARTEMENT--,ou=urz,dc=unibas,dc=ch
+objectClass: organizationalRole
+cn: people 
+
+dn: cn=groups,ou=--DEPARTEMENT--,ou=urz,dc=unibas,dc=ch
+objectClass: organizationalRole
+cn: groups 
+
+dn: cn=computer,ou=--DEPARTEMENT--,ou=urz,dc=unibas,dc=ch
+objectClass: nisNetgroup
+cn: computer
+
+dn: cn=server,ou=--DEPARTEMENT--,ou=urz,dc=unibas,dc=ch
+objectClass: nisNetgroup
+cn: server 
+

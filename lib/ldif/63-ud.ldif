@@ -1,0 +1,103 @@
+dn: cn=schema
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.1 
+                     NAME 'policyClass' 
+                     DESC 'policy-engine class attribute/name/identifier' 
+                     EQUALITY caseIgnoreMatch 
+                     SUBSTR caseIgnoreSubstringsMatch 
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.2 
+                     NAME 'udSerial' 
+                     DESC 'unique integer serial to maintain group lists and identifiers' 
+                     EQUALITY integerMatch 
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.27{1024} SINGLE )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.3
+                     NAME 'udMemberSerial'
+                     DESC 'member serials for reverse grouping'
+                     EQUALITY integerMatch
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.27{1024} )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.4 
+                     NAME 'udGroup' 
+                     DESC 'group may be member of other group(s)' 
+                     EQUALITY caseIgnoreMatch 
+                     SUBSTR caseIgnoreSubstringsMatch 
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.5
+                     NAME 'FQDN'
+                     DESC 'full qualified named of host'
+                     EQUALITY caseIgnoreMatch
+                     SUBSTR caseIgnoreSubstringsMatch
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.6
+                     NAME 'udMemberContainer'
+                     DESC 'containers can also be grouped as members'
+                     EQUALITY caseIgnoreMatch
+                     SUBSTR caseIgnoreSubstringsMatch
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.7
+                     NAME 'policyClassDisabled'
+                     DESC 'disable policy classes defined through heritage'
+                     EQUALITY caseIgnoreMatch
+                     SUBSTR caseIgnoreSubstringsMatch
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.8
+                     NAME 'USID'
+                     DESC 'global unique system ID for hostmatching in inventory and monitoring'
+                     EQUALITY caseIgnoreMatch
+                     SUBSTR caseIgnoreSubstringsMatch
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.9
+                     NAME 'unixGroup'
+                     DESC 'multi-value posix gid like uid'
+                     EQUALITY caseIgnoreMatch
+                     SUBSTR caseIgnoreSubstringsMatch
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+#
+attributetypes: ( 1.3.6.1.4.1.22865.10.4.1.10
+                     NAME 'lastSeen'
+                     DESC 'unique integer lastSeen value in format yearmonthdayhourminsec, ie 20091224010001 '
+                     EQUALITY integerMatch
+                     SYNTAX 1.3.6.1.4.1.1466.115.121.1.27{1024} SINGLE )
+#
+#---------------------------------
+#
+objectclasses: ( 1.3.6.1.4.1.22865.10.4.2.1  
+                     NAME 'udHostContainer' 
+                     DESC 'base hostgroup container' 
+                     SUP top AUXILIARY 
+                     MUST ( ou ) 
+                     MAY ( udSerial $ description $ cn $ policyClass $ policyClassDisabled $ uid $ uidNumber $ gidNumber $ unixGroup $ udGroup $ udMemberSerial $ udMemberContainer ) )
+#
+objectclasses: ( 1.3.6.1.4.1.22865.10.4.2.2  
+                     NAME 'udHost' 
+                     DESC 'host object container' 
+                     SUP top AUXILIARY 
+                     MUST ( cn $ udSerial $ lastSeen ) 
+                     MAY ( description $ ou $ policyClass $ policyClassDisabled $ uid $ uidNumber $ gidNumber $ unixGroup $ udGroup $ udMemberSerial $ FQDN $ USID ) )
+#
+objectclasses: ( 1.3.6.1.4.1.22865.10.4.2.3  
+                     NAME 'udDomain' 
+                     DESC 'domain container for absolute base acl's (users, group of group etc)' 
+                     SUP top AUXILIARY 
+                     MUST ( ou ) 
+                     MAY ( udSerial $ description $ cn $ policyClass $ policyClassDisabled $ uid $ uidNumber $ gidNUmber $ unixGroup $ udGroup $ udMemberSerial $ udMemberContainer ) )
+#
+objectclasses: ( 1.3.6.1.4.1.22865.10.4.2.4
+                     NAME 'udGroup'
+                     DESC 'group container for multiple purpose (users, group of group etc)'
+                     SUP top AUXILIARY
+                     MUST ( cn )
+                     MAY ( udSerial $ description $ ou $ policyClass $ policyClassDisabled $ uid $ uidNumber $ gidNUmber $ unixGroup $ udGroup $ udMemberSerial $ udMemberContainer $ FQDN $ USID $ udMemberSerial ) )
+
+
+
+
+
+

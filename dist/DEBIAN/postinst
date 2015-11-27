@@ -1,0 +1,27 @@
+#!/bin/bash
+for python_lib_dir in `ls -dr1 /usr/lib/python2.?/*-packages`; do
+    ln -s /opt/UD2/lib ${python_lib_dir}/UniDomain
+done
+# we backup some data just in case.
+backup_dir=/var/cache/ud2/backup
+if [ ! -d ${backup_dir} ]; then
+    mkdir -p ${backup_dir}
+fi
+cp -f /etc/passwd ${backup_dir}/passwd.update
+cp -f /etc/group ${backup_dir}/group.update
+# backup pre ud2 data
+if [ ! -f ${backup_dir}/passwd.original ]; then
+    cp /etc/passwd ${backup_dir}/passwd.original
+fi
+if [ ! -f ${backup_dir}/group.original ]; then 
+    cp /etc/group ${backup_dir}/group.original
+fi
+if  [ -e /etc/krb5.conf -a ! -f ${backup_dir}/krb5.conf.original ]; then
+    cp /etc/krb5.conf ${backup_dir}/krb5.conf.original 
+fi
+# add all required config files
+#cp /opt/UD2/etc/ud2.conf /etc/ud2.conf
+cp /opt/UD2/etc/krb5.conf /etc/krb5.conf
+# make sure config files are world readable.
+chmod 644 /etc/krb5.conf
+

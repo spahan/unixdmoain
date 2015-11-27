@@ -1,0 +1,42 @@
+#objectclasses: ( 1.3.6.1.4.1.22865.10.4.2.3
+#                     NAME 'udContainer'
+#                     DESC 'group container for multiple purpose (users, group of group etc)'
+#                     SUP top AUXILIARY
+#                     MUST ( cn $ udSerial )
+#                     MAY ( description $ ou $ policyClass $ uid $ uidNumber $ gid $ gidNumber $ udMemberOfGroup $ udMemberSerial $ udMemberContainer ) )
+#
+#----------------------
+
+
+dn: cn=newHost1.ud.unibas.ch,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: dNSZone
+objectClass: udHost
+relativeDomainName: newHost1
+zoneName: ud.unibas.ch
+dNSTTL: 3600
+dNSClass: IN
+ARecord: 192.168.0.42
+cn: newHost1
+FQDN: newHost1.ud.unibas.ch
+udSerial: 200013
+uid: hoehle
+USID: host/newHost1.ud.unibas.ch@UD.UNIBAS.CH
+
+dn: cn=newHost2.ud.unibas.ch,ou=example.org,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: dNSZone
+objectClass: udHost
+relativeDomainName: newHost2
+zoneName: ud.unibas.ch
+dNSTTL: 3600
+dNSClass: IN
+ARecord: 192.168.0.43
+cn: newHost2
+FQDN: newHost2.ud.unibas.ch
+udSerial: 200014
+uid: hoehle
+USID: host/newHost2.ud.unibas.ch@UD.UNIBAS.CH
+
+
+

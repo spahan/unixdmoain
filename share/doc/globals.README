@@ -1,0 +1,25 @@
+Help on module UniDomain.globals in UniDomain:
+
+NAME
+    UniDomain.globals
+
+FILE
+    /usr/lib64/python2.4/site-packages/UniDomain/globals.py
+
+DESCRIPTION
+    THIS SOFTWARE IS LICENSED UNDER THE BSD LICENSE CONDITIONS.
+    FOR LICENCE DETAILS SEE share/LICENSE.TXT
+    
+    (c) 2005-2009, Marco Hoehle <marco.hoehle@unibas.ch>
+    
+    
+    
+    
+    load config, set globals for the other modules
+
+DATA
+    DEBUG = False
+    LDAP_TIMEOUT = 30
+    xmlCONF = {'AUTHEN_plugin': 'AUTHEN_krb5', 'AUTHOR_plugin': 'AUTHOR_ld...
+
+

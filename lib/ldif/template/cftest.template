@@ -1,0 +1,16 @@
+# cftest, hostGroup, new, SYS, ud.unibas.ch
+dn: cn=cftest,ou=hostGroup,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: dNSZone
+objectClass: udHost
+relativeDomainName: cftest
+zoneName: ud.unibas.ch
+dNSTTL: 3600
+dNSClass: IN
+ARecord: 131.152.22.98
+cn: cftest
+FQDN: cftest.ud.unibas.ch
+udSerial: 1000001
+uid: hoehle
+USID: host/cftest.ud.unibas.ch@UD.UNIBAS.CH
+

@@ -1,0 +1,59 @@
+Help on module UniDomain.functions in UniDomain:
+
+NAME
+    UniDomain.functions
+
+FILE
+    /usr/lib64/python2.4/site-packages/UniDomain/functions.py
+
+DESCRIPTION
+    THIS SOFTWARE IS LICENSED UNDER THE BSD LICENSE CONDITIONS.
+    FOR LICENCE DETAILS SEE share/LICENSE.TXT
+    
+    (c) 2005-2009, Marco Hoehle <marco.hoehle@unibas.ch>
+    
+    
+    
+    
+    unidom functions
+    marco.hoehle@unibas.ch
+    
+    "wild" functions for ud
+
+FUNCTIONS
+    ask(question)
+    
+    get_local_ip()
+        connect to google and find out the local IP through this socket connect
+        that is "really" connected to an network, according to the OS
+        if this does fail, the firewall is to restrictive ;-)
+    
+    get_local_ipv6(IPv6_LINKLOCAL=False)
+        python 2.4 has not yet all the nice ipv6 adress functions like python 3.x
+    
+    get_osrelease()
+    
+    getlocalhostname()
+        tend to be unsafe but fast - may need to be adopted for different distributions
+    
+    getlocalhostname_nodns()
+        safe but slow, see getlocalhostname()
+    
+    krb5path(progname)
+        automatic search for multiple path variants of the krb5 distribution
+    
+    nowstr()
+    
+    readconf_xml(*args, **kword)
+        read config from xmlfile and give back data dictionary (marshaller)
+        If the configfile does not exist, it will be created with defaults.
+        If the configfile is faulty an exception can be thrown.
+    
+    set_newHostname(princ, FQDN)
+    
+    touch(filename)
+
+DATA
+    CONFIGFILE = '/opt/UD2/etc/ud_conf.xml'
+
+

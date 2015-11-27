@@ -1,0 +1,124 @@
+
+
+
+ldap MUST:
+
+Attributes:
+     NAME 'policyClass' 
+     NAME 'udSerial'               (internal use)
+     NAME 'udMemberSerial'         (future use)
+     NAME 'udMemberOfGroup'        
+     NAME 'FQDN'
+     NAME 'udMemberContainer'      (future use)
+     NAME 'policyClassDisabled'    (future use)
+     NAME 'USID'                  
+     NAME 'unixGroup'                  
+
+foreign attributes used:
+     NAME 'cn'                  
+     NAME 'ou'                  
+     NAME 'uid'                  
+     NAME 'uidNumber'                  
+     NAME 'gidNumber'                  
+     
+All objects and attributes from the bind-ldap sdb backend schema are used !
+    (http://bind9-ldap.bayour.com/)
+
+objectClasses:
+     NAME 'udHostContainer'       
+     NAME 'udHost' 
+     NAME 'udContainer' 
+     NAME 'udGroup' 
+
+
+
+
+
+
+
+1) identify host.dn
+
+
+2) search base.dn
+  base.dn is the first udContainer our host lives in.
+  All configuration is based on this concept.
+
+
+  DIT 
+   |
+   +-- udDomain(x1)       _____   _____        ____    _____  (domain/departement default user,groups and policies)
+           |               / \     / \          / \     / \
+           +--- ou          |       |            |       |
+                |           |       |            |       |
+                +-- udHostA  -+     |            |       |
+                +-- udHostB  -+     |            |       |
+                |                   |            |       |
+                +----udGroup     ---+            |       | (group of users, groups and policies for this udDomain and all udHostContainers )
+                |                                |       |
+                +----udHostContainer(x2) _____   |       | (exclusive user, groups and policies for hosts below udHostContainer)
+                |        |                / \    |       |
+                |        |                 |     |       |
+                |        +-- udHost1      -+     |       |
+                |        +-- udHost2      -+     |       |
+                |        +-- udGroup          ---+       | (group of users, groups and policies for this udHostContainer )
+                +-- ou                                   |
+                    |                                    |
+                    +----udHostContainer(x3) _____       | (exclusive users, groups and polcies (new HostContainer))
+                             |                / \        |
+                             |                 |         |
+                             +-- udHostX      -+         |
+                             +-- udHostY      -+         |
+                             +----udGroup         -------+ (group of users, groups and policies for this udHostContainer )
+
+
+
+
+3) collect all user-, group and policy information starting at this point.
+   - scope_BASE : udContainer, udHostContainer, udHost, udGroup.
+
+  - Collection and user/group/policy-add via DIT structure in the scope of one udContainer,
+    all udHostContainers(i.e. x3) "after" the host's DN are ignored.
+
+  - udGroup objects are ONLY used for grouping and NO DIT thing.
+    They can be referenced from an Container or Host via the "udMemberOfGroup" attribute.
+
+  - udGroup objects are ONLY used from the host's udHostContainer-basedn !! (departement view)
+
+  - when a new udHostContainer is created it is exclusive (means a "new, fresh, unused" tree starts. But the grouping may be used anyway, not yet sure of this.)
+
+
+4) when a host has collected it's information from :
+    .1 usHostContainer (uid, unixGroup, policy, udMemberOfGroup)
+    .2 udContainer (uid, unixGroup, policy, udMemberOfGroup)
+    .3 udHost (uid, unixGroup, policy, udMemberOfGroup)
+    .4 udGroup: get ID's from all "udMemberOfGroup" udGroup-objects (uid, unixGroup, policy)
+  it has basically 4 tables:
+    .1 all uid's 
+    .2 all unixGroup
+    .3 all policy names
+    .4 all udGroup serials, or names
+  with this the host can follow this procedure to get it's final userstates written.
+    .4.1 maybe (resolve udGroups and add all uid,unixGroup and policies from all used udGroups to (uid,unixGroup,policy) table.)
+    .5 interrogate the LDAP server to build "real-life" data for uid's and unixGroup (posixAccount, posixGroup).
+
+5) update HostInformation (ipv4 + ipv6 address plus security, os specific information)
+
+6) write uid,unixGroup and policy information to managed-system (passwd, group, cfengine, status)
+
+7) close all connections and cleanup
+
+    
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+

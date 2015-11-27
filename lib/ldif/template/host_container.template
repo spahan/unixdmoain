@@ -1,0 +1,10 @@
+
+dn: relativeDomainName=--HOSTNAME--,cn=new,cn=SYS,ou=urz,dc=unibas,dc=ch
+objectClass: top
+objectClass: dNSZone
+relativeDomainName: --HOSTNAME--
+zoneName: cus.urz.unibas.ch
+dNSTTL: 86400
+dNSClass: IN
+ARecord: --IPADDR--
+

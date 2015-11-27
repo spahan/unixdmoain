@@ -1,0 +1,109 @@
+#objectclasses: ( 1.3.6.1.4.1.22865.10.4.2.3
+#                     NAME 'udContainer'
+#                     DESC 'group container for multiple purpose (users, group of group etc)'
+#                     SUP top AUXILIARY
+#                     MUST ( cn $ udSerial )
+#                     MAY ( description $ ou $ policyClass $ uid $ uidNumber $ gid $ gidNumber $ udMemberOfGroup $ udMemberSerial $ udMemberContainer ) )
+#
+#----------------------
+#
+#
+dn: ou=newDomain,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udHostContainer
+objectClass: organizationalUnit
+cn: newDomain
+ou: newDomain
+udSerial: 200010
+uid: newDomain_user1
+uid: newDomain_user2
+uid: newDomain_user3
+uid: newDomain_user4
+unixGroup: newDomain_wheel1
+unixGroup: newDomain_wheel2
+policyClass: newDomain_policy1
+policyClass: newDomain_policy2
+policyClass: newDomain_policy3
+udMemberOfGroup: newUserGroup
+udMemberOfGroup: newHostGroup
+
+dn: cn=secureHosts,ou=newDomain,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udHostContainer
+cn: secureHosts
+udSerial: 200020
+uid: secureHosts_user1
+uid: secureHosts_user2
+unixGroup: secureHosts_wheel
+policyClass: secureHosts_policy1 
+policyClass: secureHosts_policy2
+policyClass: secureHosts_policy3
+policyClass: secureHosts_policy4
+
+
+dn: cn=udContainer,ou=newDomain,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udContainer
+cn: newDomain
+description: additional host grouping with additional group ordering
+udSerial: 200030
+uid: gschwina
+uid: sindling
+uid: hoehle
+udMemberOfGroup: newUserGroup
+udMemberOfGroup: newHostGroup
+
+dn: ou=newHostGroup,ou=newDomain,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udGroup
+objectClass: organizationalUnit
+cn: newHostGroup
+ou: newHostGroup
+FQDN: newHost1.ud.unibas.ch
+FQDN: newHost2.ud.unibas.ch
+udSerial: 200011
+
+dn: ou=newUserGroup,ou=newDomain,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: udGroup
+objectClass: organizationalUnit
+cn: newUserGroup
+ou: newUserGroup
+uid: hoehle
+uid: gschwina
+uid: sindling
+uid: newUser
+udSerial: 200012
+
+dn: cn=newHost1.ud.unibas.ch,ou=newHostGroup,ou=newDomain,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: dNSZone
+objectClass: udHost
+relativeDomainName: newHost1
+zoneName: ud.unibas.ch
+dNSTTL: 3600
+dNSClass: IN
+ARecord: 192.168.0.42
+cn: newHost1
+FQDN: newHost1.ud.unibas.ch
+udSerial: 200013
+uid: hoehle
+USID: host/newHost1.ud.unibas.ch@UD.UNIBAS.CH
+
+dn: cn=newHost2.ud.unibas.ch,ou=newHostGroup,ou=newDomain,ou=new,ou=SYS,dc=ud,dc=unibas,dc=ch
+objectClass: top
+objectClass: dNSZone
+objectClass: udHost
+relativeDomainName: newHost2
+zoneName: ud.unibas.ch
+dNSTTL: 3600
+dNSClass: IN
+ARecord: 192.168.0.43
+cn: newHost2
+FQDN: newHost2.ud.unibas.ch
+udSerial: 200014
+uid: hoehle
+USID: host/newHost2.ud.unibas.ch@UD.UNIBAS.CH
+
+
+

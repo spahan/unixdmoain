@@ -1,0 +1,82 @@
+Help on module UniDomain.writer in UniDomain:
+
+NAME
+    UniDomain.writer
+
+FILE
+    /usr/lib64/python2.4/site-packages/UniDomain/writer.py
+
+DESCRIPTION
+    THIS SOFTWARE IS LICENSED UNDER THE BSD LICENSE CONDITIONS.
+    FOR LICENCE DETAILS SEE share/LICENSE.TXT
+    
+    (c) 2005-2009, Marco Hoehle <marco.hoehle@unibas.ch>
+    
+    
+    
+    
+    writer library contains classes and functions to maintain the relation between
+    /etc/passwd, /etc/group and the policyEngine flag directory.
+    Also it takes care of keeping the cache for the idfiles plus the logic to add/remove/modify entries
+    in this objects.
+    
+    - idfiles (passwd + group)
+    - policydir (cfengine)
+
+CLASSES
+    _Idfile(__builtin__.object)
+        Idfile
+    
+    class Idfile(_Idfile)
+     |  Method resolution order:
+     |      Idfile
+     |      _Idfile
+     |      __builtin__.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, resnode, config=False)
+     |  
+     |  compare(self, attr)
+     |  
+     |  process(self)
+     |  
+     |  write_policies(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _Idfile:
+     |  
+     |  __del__(self)
+     |  
+     |  __repr__(self)
+     |  
+     |  close(self)
+     |  
+     |  load(self)
+     |  
+     |  open(self)
+     |  
+     |  reset_cache(self)
+     |      the master records are the "no-ldap" password files to maintain manual useradd/remove/mod
+     |      they will only be created once - when there is no cachefile yet and so the system is not yet managed
+     |      the ldap records are then created dynamic
+     |  
+     |  save(self)
+     |  
+     |  write(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from _Idfile:
+     |  
+     |  __dict__ = <dictproxy object>
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__ = <attribute '__weakref__' of '_Idfile' objects>
+     |      list of weak references to the object (if defined)
+
+DATA
+    DEBUG = False
+    GRPFILE = '/etc/group'
+    PWDFILE = '/etc/passwd'
+
+
